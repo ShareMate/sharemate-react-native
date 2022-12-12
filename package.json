@@ -12,8 +12,10 @@
   "dependencies": {
     "react": "18.1.0",
     "react-native": "0.70.6",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-splash-screen": "^3.3.0",
+    "react-native-status-bar-height": "^2.6.0",
     "react-native-webview": "^11.25.0"
   },
   "devDependencies": {

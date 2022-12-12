@@ -3,12 +3,14 @@ import {WebView} from 'react-native-webview';
 import {SafeAreaView, StatusBar, View, Platform} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import LinearGradient from 'react-native-linear-gradient';
-
+import {getStatusBarHeight} from 'react-native-status-bar-height';
 const App = () => {
   const STATUSBAR_HEIGHT = StatusBar.currentHeight;
+  const statusBarHeight = getStatusBarHeight(true);
   useEffect(() => {
     try {
       setTimeout(() => {
+        console.log(statusBarHeight);
         SplashScreen.hide();
       }, 500);
     } catch (e) {
@@ -22,7 +24,7 @@ const App = () => {
           useAngle={true}
           angle={90}
           colors={['#818cf8', '#d8b4fe', '#f9a8d4']}
-          style={{height: 35}}>
+          style={{height: 44}}>
           <StatusBar backgroundColor={'transparent'} translucent />
         </LinearGradient>
       ) : (
@@ -30,7 +32,7 @@ const App = () => {
           useAngle={true}
           angle={90}
           colors={['#818cf8', '#d8b4fe', '#f9a8d4']}
-          style={{height: 25}}>
+          style={{height: STATUSBAR_HEIGHT}}>
           <StatusBar backgroundColor={'transparent'} translucent />
         </LinearGradient>
       )}
